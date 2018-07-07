@@ -179,9 +179,9 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  let anos = (this.idade === 1) ? 'ano' : 'anos';
-  let artigo  = (this.sexo === 'Masculino') ? 'o' : 'a';
-  let distancia   = (this.caminhouQuantosMetros === 1) ? 'metro' : 'metros';
+  let anos = this.idade === 1 ? 'ano' : 'anos';
+  let artigo  = this.sexo === 'Masculino' ? 'o' : 'a';
+  let distancia   = this.caminhouQuantosMetros === 1 ? 'metro' : 'metros';
 
   return "Olá, eu sou " + artigo + " " + this.nome + " " + this.sobrenome + ", tenho " + this.idade + " " + anos + ", " + this.altura + ", meu peso é " + this.peso + "Kg e, só hoje, eu já caminhei " + this.caminhouQuantosMetros + " " + distancia + "!";
 }
