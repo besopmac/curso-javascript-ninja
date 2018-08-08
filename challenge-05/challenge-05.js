@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+let myArray = [1, 'string', null, function(){}, undefined];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+let myFunction = function(arr) {
+    return arr;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+myFunction(myArray[1]); // 'string'
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+let myNewFunction = function(arr, num) {
+    return arr[num];
+};
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+let newArray = ['Lorem ipsum', {nome: 'Bruno'}, 3, null, [1, 2, 3]];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+myNewFunction(newArray, 0); // "Lorem ipsum"
+myNewFunction(newArray, 1); // "{nome: "Bruno"}"
+myNewFunction(newArray, 2); // 3
+myNewFunction(newArray, 3); // null
+myNewFunction(newArray, 4); // [1, 2, 3]
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,7 +55,30 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+let book = function(name) {
+    let myObject = {
+        ficcao: {
+            titulo: '1984',
+            quantidadePaginas: 300,
+            autor: 'George Orwell',
+            editora: 'The Great Pig On The Sky'
+        },
+        romance: {
+            titulo: 'Dom Quixote',
+            quantidadePaginas: 768,
+            autor: 'Miguel de Cervantes',
+            editora: 'Novo Mundo'
+        }
+    };
+
+    if (name === undefined) {
+        return myObject;
+    }
+
+    myObject.titulo = name;
+
+    return myObject;
+};
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
