@@ -2,19 +2,33 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
+<<<<<<< HEAD
 var myArray = ['Barney', 2, false, null, 'Magali'];
+=======
+let myArray = [1, 'string', null, function(){}, undefined];
+>>>>>>> d1ecca7f20846e8544c5b2c63ec018b7c9a32a33
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
+<<<<<<< HEAD
 function imprimeVetor(vetor) {
   return vetor;
 }
+=======
+let myFunction = function(arr) {
+    return arr;
+};
+>>>>>>> d1ecca7f20846e8544c5b2c63ec018b7c9a32a33
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
+<<<<<<< HEAD
 console.log(imprimeVetor(myArray)[1]);
+=======
+myFunction(myArray[1]); // 'string'
+>>>>>>> d1ecca7f20846e8544c5b2c63ec018b7c9a32a33
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -22,25 +36,43 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
+<<<<<<< HEAD
 // ?
 function retornaIndice(vetor, ponteiro) {
   return vetor[ponteiro];
 }
+=======
+let myNewFunction = function(arr, num) {
+    return arr[num];
+};
+>>>>>>> d1ecca7f20846e8544c5b2c63ec018b7c9a32a33
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
+<<<<<<< HEAD
 var novaArray = ['Marina', undefined, [7, 8, 9], { dog: 'Barney' }, true];
+=======
+let newArray = ['Lorem ipsum', {nome: 'Bruno'}, 3, null, [1, 2, 3]];
+>>>>>>> d1ecca7f20846e8544c5b2c63ec018b7c9a32a33
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
+<<<<<<< HEAD
 console.log(retornaIndice(novaArray, 0));
 console.log(retornaIndice(novaArray, 1));
 console.log(retornaIndice(novaArray, 2));
 console.log(retornaIndice(novaArray, 3));
 console.log(retornaIndice(novaArray, 4));
+=======
+myNewFunction(newArray, 0); // "Lorem ipsum"
+myNewFunction(newArray, 1); // "{nome: "Bruno"}"
+myNewFunction(newArray, 2); // 3
+myNewFunction(newArray, 3); // null
+myNewFunction(newArray, 4); // [1, 2, 3]
+>>>>>>> d1ecca7f20846e8544c5b2c63ec018b7c9a32a33
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -56,29 +88,30 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
-function book(nome) {
-  var estante = {
-    '1984': {
-      quantidadePaginas: 356,
-      autor: 'George Orwell',
-      editora: 'LeYa'
-    },
-    'O Imbecil Coletivo': {
-      quantidadePaginas: 459,
-      autor: 'Olavo de Carvalho',
-      editora: 'Saraiva'
-    },
-    'Os Segredos do Lobo': {
-      quantidadePaginas: 340,
-      autor: 'Jordan Belfort',
-      editora: 'Ediouro'
+let book = function(name) {
+    let myObject = {
+        ficcao: {
+            titulo: '1984',
+            quantidadePaginas: 300,
+            autor: 'George Orwell',
+            editora: 'The Great Pig On The Sky'
+        },
+        romance: {
+            titulo: 'Dom Quixote',
+            quantidadePaginas: 768,
+            autor: 'Miguel de Cervantes',
+            editora: 'Novo Mundo'
+        }
+    };
+
+    if (name === undefined) {
+        return myObject;
     }
-  }
 
-  return !nome ? estante : estante[nome];
-}
+    myObject.titulo = name;
 
+    return myObject;
+};
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.

@@ -8,12 +8,18 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 let isTruthy = function(arg) {
-    if (arg) {
-        return true
-    } else {
-		return false
-	}
-}
+    // Utilizando If
+    // if (arg) {
+    //     return true
+    // }
+    // return false;
+
+    // Utilizando Ternario
+    // return arg ? true : false;
+
+    // Utlizando equivalente booleano
+    return !!arg;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0)
@@ -32,6 +38,8 @@ isTruthy({})
 isTruthy([])
 isTruthy(-10)
 isTruthy(1.89)
+isTruthy(function() {});
+isTruthy(() => {});
 isTruthy('My string')
 isTruthy([1, 2, 3, 4])
 isTruthy({nome: 'Bruno'})
