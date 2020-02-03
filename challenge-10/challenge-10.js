@@ -1,3 +1,4 @@
+(function(){
 /*
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
@@ -25,6 +26,13 @@ função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
 // ?
+let operation = {
+    '+': function(p1, p2){},  
+    '-': function(p1, p2){},  
+    '*': function(p1, p2){},  
+    '/': function(p1, p2){},  
+    '%': function(p1, p2){}
+};
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -36,7 +44,9 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-// ?
+function isOperatorValid(operator) {
+    
+}
 
 /*
 Agora vamos criar a calculadora.
@@ -111,3 +121,4 @@ Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
 // ?
+})();
