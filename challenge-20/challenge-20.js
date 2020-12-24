@@ -82,7 +82,11 @@ O HTML NÃO PODE ser alterado!
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    // ?
+    $button.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        
+    });
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
