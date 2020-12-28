@@ -8,7 +8,7 @@ a marcação criada nele para fazer nosso desafio ;)
 O HTML NÃO PODE ser alterado!
 */
 
-(function(win, doc) {
+(function(window, document) {
     'use strict';
 
     /*
@@ -17,39 +17,39 @@ O HTML NÃO PODE ser alterado!
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    let username = win.prompt('Qual é o seu nome?') || "Desconhecido";
+    let username = prompt('Qual é o seu nome?') || "Desconhecido";
 
-    win.alert(`Bem-vindo ${username}`);
+    alert(`Bem-vindo, ${username}!`);
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    let email = win.prompt('Qual é o seu e-mail?');
+    let email = prompt('Qual é o seu e-mail?');
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    let $inputUsername = doc.querySelector('input[type=text]');
+    let $inputUsername = document.querySelector('input[type=text]');
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    let $inputEmail = doc.querySelector('input[type=email]');
+    let $inputEmail = document.querySelector('input[type=email]');
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
     `$message`.
     */
-    let $message = doc.querySelector('textarea');
+    let $message = document.querySelector('textarea');
 
     /*
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    let $button = doc.querySelector('button[type=submit]');
+    let $button = document.querySelector('button[type=submit]');
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
@@ -84,9 +84,24 @@ O HTML NÃO PODE ser alterado!
     */
     $button.addEventListener('click', (event) => {
         event.preventDefault();
+
+        if (!$inputUsername.value)
+            return alert('Preencha o nome do usuário!');
+
+        if (!$inputEmail.value)
+            return alert('Preencha o e-mail!');
         
+        if (!isValidEmail($inputEmail.value))
+            return alert('Entre com um e-mail válido!');
+
+        if (!$message.value)
+            return alert('Preencha a mensagem');
+
+        if(!confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Não enviado.');
         
-    });
+        return alert('Enviado com sucesso');
+    }, false);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -114,6 +129,9 @@ O HTML NÃO PODE ser alterado!
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    
+    function isValidEmail(email) {
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
+    }
 
 })(window, document);
